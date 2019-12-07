@@ -1,0 +1,41 @@
+{
+    "name": "io.github.vrtk-community",
+    "displayName": "VRTK Community Extras",
+    "description": "Extra Zinnia-like scripts and Tilia-like prefabs.",
+    "version": "0.0.1",
+    "unity": "2018.2",
+    "keywords": [
+	"vrtk",
+	"zinnia",
+	"tilia",
+	"xr",
+	"vr",
+	"ar",
+	"mr"
+    ],
+    "homepage": "https://github.com/vrtk-community/extras",
+    "bugs": {
+	"url": "https://github.com/vrtk-community/extras/issues"
+    },
+    "repository": {
+	"type": "git",
+	"url": "ssh://git@github.com/vrtk-community/extras.git"
+    },
+    "license": "MIT",
+    "author": {
+	"name": "Dustin Lacewell",
+	"email": "dlacewell@gmail.com",
+	"url": "https://github.com/vrtk-community"
+    },
+    "dependencies": {
+	"io.extendreality.vrtk.prefabs": "1.1.6",    
+	"io.extendreality.zinnia.unity": "1.8.1"
+    },
+    "files": [
+	"*.md",
+	"*.meta",
+	"*.xml",
+	"Editor",
+	"Runtime"
+    ]
+}
