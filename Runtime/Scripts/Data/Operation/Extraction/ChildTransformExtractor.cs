@@ -1,33 +1,34 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ChildTransformExtractor : MonoBehaviour
+namespace VRToolkitExtras.Data.Operation.Extraction
 {
-    [Serializable]
-    public class UnityEvent : UnityEvent<GameObject> { }
-
-    public GameObject Parent;
-    public UnityEvent Extracted;
-
-    public void DoExtract(GameObject parent)
+    public class ChildTransformExtractor : MonoBehaviour
     {
-        if (parent == null) return;
+        [Serializable]
+        public class UnityEvent : UnityEvent<GameObject> { }
 
-        if (Extracted == null) return;
+        public GameObject Parent;
+        public UnityEvent Extracted;
 
-        foreach (Transform child in parent.transform)
+        public void DoExtract(GameObject parent)
         {
-            if (!child.gameObject.activeInHierarchy) continue;
-            Extracted.Invoke(child.gameObject);
-            return;
-        }
-    }
+            if (parent == null) return;
 
-    public void DoExtract()
-    {
-        DoExtract(Parent);
+            if (Extracted == null) return;
+
+            foreach (Transform child in parent.transform)
+            {
+                if (!child.gameObject.activeInHierarchy) continue;
+                Extracted.Invoke(child.gameObject);
+                return;
+            }
+        }
+
+        public void DoExtract()
+        {
+            DoExtract(Parent);
+        }
     }
 }

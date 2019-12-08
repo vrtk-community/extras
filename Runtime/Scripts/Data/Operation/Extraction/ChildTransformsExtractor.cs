@@ -2,28 +2,31 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ChildTransformsExtractor : MonoBehaviour
+namespace VRToolkitExtras.Data.Operation.Extraction
 {
-    [Serializable]
-    public class UnityEvent : UnityEvent<GameObject> { }
-
-    public GameObject Parent;
-    public UnityEvent Extracted;
-
-    public void DoExtract(GameObject parent)
+    public class ChildTransformsExtractor : MonoBehaviour
     {
-        if (parent == null) return;
+        [Serializable]
+        public class UnityEvent : UnityEvent<GameObject> { }
 
-        if (Extracted == null) return;
-        
-        foreach(Transform child in parent.transform)
+        public GameObject Parent;
+        public UnityEvent Extracted;
+
+        public void DoExtract(GameObject parent)
         {
-            Extracted?.Invoke(child.gameObject);
-        }
-    }
+            if (parent == null) return;
 
-    public void DoExtract()
-    {
-        DoExtract(Parent);
+            if (Extracted == null) return;
+        
+            foreach(Transform child in parent.transform)
+            {
+                Extracted?.Invoke(child.gameObject);
+            }
+        }
+
+        public void DoExtract()
+        {
+            DoExtract(Parent);
+        }
     }
 }

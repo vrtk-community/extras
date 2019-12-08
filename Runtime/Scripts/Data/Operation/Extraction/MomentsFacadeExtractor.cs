@@ -2,22 +2,25 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MomentsFacadeExtractor : MonoBehaviour
+namespace VRToolkitExtras.Data.Operation.Extraction
 {
-    [Serializable]
-    public class UnityEvent : UnityEvent<MomentsFacade> { }
-
-    public UnityEvent Extracted;
-
-    public void DoExtract(GameObject target)
+    public class MomentsFacadeExtractor : MonoBehaviour
     {
-        foreach (Transform child in target.transform)
-        {
-            var facade = child.GetComponent<MomentsFacade>();
-            if (facade == null) continue;
+        [Serializable]
+        public class UnityEvent : UnityEvent<VRToolkitExtras.Prefabs.MomentsFacade> { }
 
-            Extracted?.Invoke(facade);
-            return;
+        public UnityEvent Extracted;
+
+        public void DoExtract(GameObject target)
+        {
+            foreach (Transform child in target.transform)
+            {
+                var facade = child.GetComponent<VRToolkitExtras.Prefabs.MomentsFacade>();
+                if (facade == null) continue;
+
+                Extracted?.Invoke(facade);
+                return;
+            }
         }
     }
 }

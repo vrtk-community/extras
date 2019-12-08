@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
-public class DebugMessage : MonoBehaviour
+namespace VRToolkitExtras.Debug
 {
-    public string Message;
-
-    public void DoMessage()
+    public class DebugMessage : MonoBehaviour
     {
-        Debug.Log(Message);
+        public string Message;
+
+        public void DoMessage()
+        {
+            UnityEngine.Debug.Log(Message);
+        }
     }
 }

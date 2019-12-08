@@ -3,18 +3,21 @@ using UnityEngine;
 using UnityEngine.Events;
 using VRTK.Prefabs.Interactions.Interactables.Grab.Action;
 
-public class GrabInteractableExtractor : MonoBehaviour
+namespace VRToolkitExtras.Data.Operation.Extraction
 {
-    [Serializable]
-    public class UnityEvent : UnityEvent<GrabInteractableAction> { }
-
-    public UnityEvent Extracted;
-
-    public void DoExtract(GameObject container)
+    public class GrabInteractableExtractor : MonoBehaviour
     {
-        if (container.TryGetComponent<GrabInteractableAction>(out var action))
+        [Serializable]
+        public class UnityEvent : UnityEvent<GrabInteractableAction> { }
+
+        public UnityEvent Extracted;
+
+        public void DoExtract(GameObject container)
         {
-            Extracted?.Invoke(action);
+            if (container.TryGetComponent<GrabInteractableAction>(out var action))
+            {
+                Extracted?.Invoke(action);
+            }
         }
     }
 }
