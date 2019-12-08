@@ -35,7 +35,6 @@
 	"*.md",
 	"*.meta",
 	"*.xml",
-	"Editor",
 	"Runtime"
     ]
 }
