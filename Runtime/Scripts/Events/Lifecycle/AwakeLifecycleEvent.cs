@@ -8,9 +8,9 @@ namespace VRToolkitExtras.Events.Lifecycle
     {
     
         [Serializable]
-        public class UnityEvent : UnityEvent<GameObject> { }
+        public class GameObjectUnityEvent : UnityEvent<GameObject> { }
 
-        public UnityEvent Awaken;
+        public GameObjectUnityEvent Awaken;
 
         private void Awake()
         {
