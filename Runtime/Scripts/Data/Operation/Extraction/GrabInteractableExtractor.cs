@@ -8,9 +8,9 @@ namespace VRToolkitExtras.Data.Operation.Extraction
     public class GrabInteractableExtractor : MonoBehaviour
     {
         [Serializable]
-        public class UnityEvent : UnityEvent<GrabInteractableAction> { }
+        public class GrabInteractableActionUnityEvent : UnityEvent<GrabInteractableAction> { }
 
-        public UnityEvent Extracted;
+        public GrabInteractableActionUnityEvent Extracted;
 
         public void DoExtract(GameObject container)
         {

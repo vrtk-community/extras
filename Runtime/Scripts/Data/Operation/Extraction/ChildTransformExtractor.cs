@@ -7,10 +7,10 @@ namespace VRToolkitExtras.Data.Operation.Extraction
     public class ChildTransformExtractor : MonoBehaviour
     {
         [Serializable]
-        public class UnityEvent : UnityEvent<GameObject> { }
+        public class GameObjectUnityEvent : UnityEvent<GameObject> { }
 
         public GameObject Parent;
-        public UnityEvent Extracted;
+        public GameObjectUnityEvent Extracted;
 
         public void DoExtract(GameObject parent)
         {
